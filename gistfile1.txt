@@ -1,0 +1,51 @@
+telegram-python-bot/
+├── bot.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+TOKEN = "8020293517:AAFAlRGd6NaELPtaHJf0le4LzzbNMf78ejc"
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("👋 Hello! I'm your Telegram bot.")
+
+def main():
+    app = ApplicationBuilder().token(TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    print("🤖 Bot is running...")
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
+python-telegram-bot==20.7
+__pycache__/
+.env
+*.pyc
+# Telegram Python Bot 🤖
+
+## Installation
+```bash
+pip install -r requirements.txt
+python bot.py
+
+---
+
+## 📝 2. Push to GitHub from Local Directory
+
+Here’s how to upload this project using Git commands:
+
+1. **Create a new GitHub repository** named `telegram-python-bot`.
+2. Navigate into your project root directory.
+3. Run the following commands:
+
+```bash
+git init -b main
+git add .
+git commit -m "Initial Telegram bot project"
+git remote add origin git@github.com:makemoneyviral/telegram-python-bot.git
+git push -u origin main
+import os
+TOKEN = os.getenv("BOT_TOKEN")
+export BOT_TOKEN="8020…ejc"
